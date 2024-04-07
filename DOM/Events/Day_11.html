@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day_11</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <script>
+
+            // function sample(){
+            //     console.log(this.age);
+            //     sample2();                              // sample2() --> default binding 
+            // }
+            // function sample2(){
+            //     // this is window --> window.age --> undefined
+            //     console.log(this.age);
+            // }
+            // const obj = {
+            //     name: 'naman',
+            //     age: 10
+            // }
+            // sample.call(obj);
+
+//TODO: -------------------------------------------------------------------
+
+            // function sample(){
+            //     console.log(this.age);
+            //     sample2();                              // sample2() --> default binding 
+            // }
+            // function sample2(tnat){
+            //     // this is window --> window.age --> undefined
+            //     console.log(that.age);
+            // }
+            // const obj = {
+            //     name: 'naman',
+            //     age: 10
+            // }
+            // sample.call(obj);
+
+// TODO: ---------------------------------------------------------
+
+                function animal(species, name, legs, wings){
+                    this.species = species
+                    this.name  = name
+                    this.legs = legs
+                    this.wings = wings
+                    this.staticVal = 300;
+
+                    this.sampleFunc = function(){
+                        console.log(this);
+                    }
+                }
+
+                const cheetah = new animal('a', 'cheetah', 4, false);
+                console.log(cheetah);
+                cheetah.sampleFunc();
+    </script>
+</body>
+</html>

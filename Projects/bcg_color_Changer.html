@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCG color changer</title>
+
+    <style>
+        body{
+            background-color: rgb(90, 82, 82);
+            color: rgb(0, 0, 0);
+        }
+
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .container h1{
+            font-size: 4rem;
+            text-decoration: underline;
+        }
+        .container p{
+            font-size: 2rem;
+            margin-bottom: 0px;
+            line-height: 0px;
+           
+        }
+        .childContainer{
+            display: flex;
+            gap: 40px;
+            
+        }
+        .childContainer .box{
+            height: 150px;
+            width: 150px;
+            margin-bottom: 30px;
+        }
+        #id1{
+            background-color: rgba(15, 162, 162, 0.723);
+        }
+        #id2{
+            background-color:rgba(176, 176, 24, 0.89);
+        }
+        #id3{
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Background color changer</h1>
+        <div class="childContainer">
+            <div class = "box" id="id1"></div>
+            <div class = "box" id="id2"></div>
+            <div class = "box" id="id3"></div>
+        </div>
+
+        <p>Try to click on the any square box to change the </p>
+            <h2>background-color of the web page</h2>
+    </div>
+
+    <script>
+
+        document.getElementById('id1').addEventListener('click', function(){
+            document.body.style.backgroundColor = "rgba(15, 162, 162, 0.723)";
+        })
+        document.getElementById('id2').addEventListener('click', function(){
+            document.body.style.backgroundColor = 'rgba(176, 176, 24, 0.89)';
+        })
+        document.getElementById('id3').addEventListener('click', function(){
+            document.body.style.backgroundColor = 'antiquewhite';
+        })
+        
+    </script>
+ 
+
+</body>
+</html>

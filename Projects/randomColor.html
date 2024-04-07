@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Color Generator</title>
+
+    <style>
+        body{
+            background-color: #000000;
+            color: #f6f6f6;
+        }
+        .container{
+            display: flex;           
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .container h1{
+            font-size: 3rem;
+            color: #adff2f;
+            margin-top: 150px;
+        }
+        .container button{
+            background-color: #0808eb;
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin: 15px;
+            width: 150px;
+            padding: 15px;
+            border: none;
+            border-radius: 30px;
+        }
+        .container button:hover{
+            color: black;
+            background-color: #dbdbd1dd;
+            cursor: pointer;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Generating Random Color</h1>
+                
+            <div>
+                <button id = "start">Start</button>
+                <button id = "stop">Stop</button>
+            </div>
+    </div>
+
+    <script>
+
+        /* TODO: ----- random color code ------- */
+
+        function randomColor(){
+            let letters = '0123456789ABCDEF';
+            let color = '#';
+            for(let i = 0; i < 6; i++){
+                color = color + letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        // randomColor();
+       
+        let stopBtn;
+        const startBgColor = function (){
+            stopBtn = setInterval(() => {
+                document.body.style.backgroundColor = randomColor();
+            }, 1500);
+        }
+       
+        
+        function stopBgColor(){
+            clearInterval(stopBtn);
+        }
+
+        document.querySelector('#start').addEventListener('click', startBgColor);
+        document.querySelector('#stop').addEventListener('click', stopBgColor);
+
+    </script>
+</body>
+</html>
